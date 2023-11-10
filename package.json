@@ -5,8 +5,7 @@
   "main": "server/index.js",
   "type": "module",
   "scripts": {
-    "start":"node server/index.js",
-    "build":"./node_modules/.bin/netlify-lambda build src"
+    "start":"node server/index.js"
   },
   "keywords": [
     "Mongodb",
