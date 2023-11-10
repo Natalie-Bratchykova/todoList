@@ -193,38 +193,42 @@ body {
   .lists__title {
     font-size: 1.6em;
   }
-  .list__container {
+  /* .list__container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 7%;
-  }
-  .list__container .list {
-    list-style: none;
-    max-height: 20em;
-    width: fit-content;
-    overflow-y: scroll;
-    padding: 1% 2%;
-    border-radius: 0.2em;
-    scrollbar-width: none;
-  }
-  .list__container .list::-webkit-scrollbar {
-    display: none;
-  }
-  .list__container .list::-webkit-scrollbar-thumb {
-    display: none;
-  }
-  .list__container .list__item {
-    width: 18em;
-    font-size: 1em;
-    margin-top: 3.5%;
-  }
-  .list__container .list__link {
-    font-size: 1em;
-  }
-  .list__container .list__link:hover {
-    font-size: 1.1em;
-  }
+
+    .list {
+      list-style: none;
+      max-height: 20em;
+      width: fit-content;
+      overflow-y: scroll;
+      padding: 1% 2%;
+      border-radius: 0.2em;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        display: none;
+      }
+
+      &__item {
+        width: 18em;
+        font-size: 1em;
+        margin-top: 3.5%;
+      }
+      &__link {
+        font-size: 1em;
+
+        &:hover {
+          font-size: 1.1em;
+        }
+      }
+    }
+  } */
 }
 @media (max-width: 600px) {
   .header {
@@ -253,6 +257,57 @@ body {
 @media (max-width: 450px) {
   body {
     font-size: 12px;
+  }
+  .header {
+    height: 12em;
+  }
+  .header svg {
+    width: 500%;
+    animation: waves 3s linear infinite;
+  }
+  @keyframes waves {
+    0%, 100% {
+      transform: translateX(-35%) translateY(-60%);
+    }
+    50% {
+      transform: translateX(-54%) translateY(-60%);
+    }
+  }
+  .main__title {
+    font-size: 1.9em;
+    top: 3.3%;
+  }
+  .form {
+    margin-top: 4%;
+  }
+  .form__input {
+    font-size: 1.6em;
+  }
+  .form__input::placeholder {
+    color: #8e3d8e;
+  }
+  .form__button {
+    font-size: 1.6em;
+  }
+  .lists__title {
+    font-size: 2.4em;
+  }
+  .list__container {
+    margin-top: 10%;
+  }
+  .list__container .list {
+    max-height: 27em;
+  }
+  .list__container .list__item {
+    width: 28em;
+    font-size: 1em;
+    margin-top: 4%;
+  }
+  .list__container .list__link {
+    font-size: 1.9em;
+  }
+  .list__container .list__link:hover {
+    font-size: 2em;
   }
 }
 .navigation .container {
