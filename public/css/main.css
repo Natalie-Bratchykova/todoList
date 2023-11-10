@@ -310,6 +310,51 @@ body {
     font-size: 2em;
   }
 }
+@media (max-width: 350px) {
+  body {
+    font-size: 12px;
+  }
+  .header {
+    height: 12em;
+  }
+  .header svg {
+    width: 500%;
+    animation: waves 3s linear infinite;
+  }
+  .main__title {
+    font-size: 2em;
+    top: 3.3%;
+  }
+  .form {
+    display: flex;
+    width: 25em;
+    margin: 4% auto;
+    flex-direction: column;
+  }
+  .form__input::placeholder {
+    text-align: center;
+  }
+  .lists__title {
+    font-size: 2.4em;
+  }
+  .list__container {
+    margin-top: 15%;
+  }
+  .list__container .list {
+    max-height: 27em;
+  }
+  .list__container .list__item {
+    width: 25em;
+    font-size: 1em;
+    margin-top: 4%;
+  }
+  .list__container .list__link {
+    font-size: 1.9em;
+  }
+  .list__container .list__link:hover {
+    font-size: 2em;
+  }
+}
 .navigation .container {
   padding: 1% 10%;
   display: flex;

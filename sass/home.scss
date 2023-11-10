@@ -291,3 +291,53 @@ body {
     }
   }
 }
+
+@media (max-width: $xs) {
+  body {
+    font-size: 12px;
+  }
+
+  .header {
+    height: 12em;
+    svg {
+      width: 500%;
+      animation: waves 3s linear infinite;
+    }
+  }
+
+  .main__title {
+    font-size: 2em;
+    top: 3.3%;
+  }
+  .form {
+    display: flex;
+    width: 25em;
+    margin: 4% auto;
+    flex-direction: column;
+    &__input::placeholder {
+      text-align: center;
+    }
+  }
+  .lists__title {
+    font-size: 2.4em;
+  }
+  .list__container {
+    margin-top: 15%;
+
+    .list {
+      max-height: 27em;
+      &__item {
+        width: 25em;
+        font-size: 1em;
+        margin-top: 4%;
+      }
+      &__link {
+        font-size: 1.9em;
+
+        &:hover {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}
