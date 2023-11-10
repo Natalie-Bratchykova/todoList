@@ -1,0 +1,192 @@
+@import "colors.scss";
+@import "_mixins.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+.navigation {
+  .container {
+    padding: 1% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      @include titles_default();
+    }
+
+    .nav {
+      margin-top: 1%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .nav__link {
+        text-decoration: none;
+        margin-left: 3%;
+        font-size: 1.2em;
+        color: $white-color;
+        font-family: "Nunito", sans-serif;
+      }
+    }
+  }
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  padding: 1% 10%;
+
+  .list__title {
+    margin-top: 10%;
+    @include list_titles(_, transparent);
+  }
+
+  // tasks
+  .tasks {
+    list-style: none;
+
+    .task__item {
+      @include glass();
+      margin-top: 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .task {
+        font-size: 1.4em;
+        font-weight: 900;
+        font-family: "Nunito", sans-serif;
+        color: $white-color;
+      }
+      .deadline {
+        font-family: "Nunito", sans-serif;
+        color: $glass;
+      }
+
+      .item__buttons {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .item__button {
+        margin-left: 2%;
+        background: transparent;
+        border: 1px solid $white-color;
+        color: $white-color;
+        font-size: 1.1em;
+        border-radius: 0.3em;
+        padding: 1.3% 4%;
+        transition: all 0.2s linear;
+
+        &:nth-child(2):hover {
+          @include item_buttons($gr-color1);
+        }
+        &:nth-child(1):hover {
+          @include item_buttons($gr-color3);
+        }
+      }
+    }
+  }
+
+  // add new item button
+  .list__button {
+    background: transparent;
+    border: 1px solid $white-color;
+    border-radius: 50%;
+    color: $white-color;
+    font-size: 1.1em;
+    padding: 1% 1.2%;
+    display: block;
+    font-weight: 700;
+    margin: 1% auto;
+    transition: all 0.2s linear;
+
+    &:hover {
+      color: $gr-color2;
+      border-color: $gr-color2;
+      cursor: pointer;
+    }
+  }
+  // add new item form
+
+  .task__form {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-45%);
+    background: $task-form-color;
+    border-radius: 0.4em;
+    box-shadow: 0 5px 10px $shadow-color;
+    padding: 1% 2%;
+    transition: all 0.3s linear;
+
+    .form__title {
+      @include list_titles(1.5em, transparent);
+    }
+
+    // &:hover {
+    //   box-shadow: 0 5px 10px $gr-color3;
+    // }
+
+    .input__group {
+      margin-top: 10%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      input {
+        padding: 3% 2%;
+        color: $gr-color1;
+        font-size: 1.1em;
+        font-family: "Nunito", sans-serif;
+        outline: none;
+        border: 1px solid $gr-color1;
+        background: transparent;
+        border-radius: 0.3em;
+        transition: all 0.2s linear;
+
+        :is(&:focus, &:valid) {
+          border-color: $gr-color1;
+        }
+        :is(&:focus, &:valid) ~ label {
+          transform: translateY(-55%);
+          font-size: 0.9em;
+          background: $task-form-color;
+        }
+      }
+
+      label {
+        position: absolute;
+        color: $gr-color1;
+        font-weight: 700;
+        padding: 0;
+        font-family: "Nunito", sans-serif;
+      }
+
+      // button
+
+      .form__button {
+        padding: 2% 10%;
+        color: $gr-color1;
+        border-color: $gr-color1;
+        border-radius: 0.2em;
+        transition: all 0.3s linear;
+
+        &:hover {
+          background: $gr-color1;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+
+.--hidden {
+  display: none;
+}

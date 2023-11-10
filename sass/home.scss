@@ -1,0 +1,122 @@
+@import "colors.scss";
+@import "_mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+body {
+  background: $body-color;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  svg {
+    position: absolute;
+    top: 0;
+    animation: waves 5s linear infinite;
+    transform: translateY(-30%);
+    left: 0;
+    z-index: -1;
+    width: 300%;
+  }
+}
+
+@keyframes waves {
+  0%,
+  100% {
+    transform: translateX(-20%) translateY(-60%);
+  }
+  50% {
+    transform: translateX(-54%) translateY(-60%);
+  }
+}
+.main__title {
+  padding-top: 3%;
+  @include titles_default();
+}
+.form {
+  margin-top: 1%;
+  text-align: center;
+  &__input {
+    outline: none;
+    @include form-button-input();
+    &::placeholder {
+      color: $main-color;
+    }
+  }
+  &__button {
+    @include form-buttons($white-color, $glass);
+  }
+}
+
+.lists__title {
+  @include titles_default(2em, $white-color);
+  color: transparent;
+  font-weight: 900;
+  @include linearGradient();
+  -webkit-background-clip: text;
+}
+
+.list__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+
+  .list {
+    list-style: none;
+    max-height: 20em;
+    width: fit-content;
+    overflow-y: scroll;
+    padding: 1% 2%;
+    border-radius: 0.2em;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+
+    &__item {
+      width: 20em;
+      display: flex;
+      font-size: 1.1em;
+      justify-content: space-between;
+      margin-top: 4%;
+      @include glass();
+    }
+    &__link {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: all 0.2s linear;
+      font-family: "Ubuntu", sans-serif;
+
+      &:hover {
+        color: $gr-color2;
+        font-size: 1.2em;
+      }
+    }
+    .delete {
+      background: transparent;
+      border: none;
+      outline: none;
+      transition: all 0.1s linear;
+      &:hover {
+        color: $gr-color1;
+      }
+    }
+
+    // &__button {
+    //   // @include form-buttons($white-color, $gr-color2);
+    //   // font-family: "Ubuntu", sans-serif;
+    //   // border: none;
+    //   // &:hover {
+    //   //   background: transparent;
+    //   //   color: $gr-color1;
+    //   // }
+    // }
+  }
+}
