@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "layoutsizes.scss";
 @import "_mixins.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
@@ -43,7 +44,7 @@
   padding: 1% 10%;
 
   .list__title {
-    margin-top: 10%;
+    margin-top: 5%;
     @include list_titles(_, transparent);
   }
 
@@ -98,7 +99,7 @@
   .list__button {
     background: transparent;
     border: 1px solid $white-color;
-    border-radius: 50%;
+    border-radius: 0.2em;
     color: $white-color;
     font-size: 1.1em;
     padding: 1% 1.2%;
@@ -129,10 +130,6 @@
     .form__title {
       @include list_titles(1.5em, transparent);
     }
-
-    // &:hover {
-    //   box-shadow: 0 5px 10px $gr-color3;
-    // }
 
     .input__group {
       margin-top: 10%;
@@ -189,4 +186,31 @@
 
 .--hidden {
   display: none;
+}
+
+@media (max-width: $lg-md) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: $md) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: $md-sm) {
+  body {
+    font-size: 12px;
+  }
+}
+@media (max-width: $sm) {
+  body {
+    font-size: 11px;
+  }
+}
+@media (max-width: $sm-xs) {
+  body {
+    font-size: 10px;
+  }
 }

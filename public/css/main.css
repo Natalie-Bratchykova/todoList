@@ -1,19 +1,29 @@
+/* variable for layout sizes */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+/* variable for layout sizes */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 body {
   background: #38273e;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
 .header {
   position: relative;
+  overflow-x: hidden;
+  height: 15em;
+  scrollbar-width: none;
+}
+.header::-webkit-scrollbar {
+  display: none;
 }
 .header svg {
   position: absolute;
   top: 0;
-  animation: waves 5s linear infinite;
+  transition: all 0.2s linear;
+  animation: waves 4s linear infinite;
   transform: translateY(-30%);
   left: 0;
   z-index: -1;
@@ -22,14 +32,17 @@ body {
 
 @keyframes waves {
   0%, 100% {
-    transform: translateX(-20%) translateY(-60%);
+    transform: translateX(-25%) translateY(-60%);
   }
   50% {
     transform: translateX(-54%) translateY(-60%);
   }
 }
 .main__title {
-  padding-top: 3%;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   font-size: 2.5em;
   text-transform: uppercase;
@@ -96,6 +109,7 @@ body {
   overflow-y: scroll;
   padding: 1% 2%;
   border-radius: 0.2em;
+  scrollbar-width: none;
 }
 .list__container .list::-webkit-scrollbar {
   display: none;
@@ -136,6 +150,111 @@ body {
   color: rgb(230, 22, 117);
 }
 
+/* adaptive */
+@media (max-width: 900px) {
+  .header {
+    overflow-x: hidden;
+  }
+  .header svg {
+    width: 350%;
+  }
+  .main__title {
+    top: 4%;
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #38273e;
+    font-family: "Nunito", sans-serif;
+  }
+  .lists__title {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 750px) {
+  body {
+    font-size: 16px;
+  }
+  .main__title {
+    top: 3.8%;
+  }
+  .form {
+    margin-top: -10%;
+  }
+  .form__input {
+    font-size: 0.9em;
+  }
+  .form__input::placeholder {
+    color: #8e3d8e;
+  }
+  .form__button {
+    font-size: 0.9em;
+  }
+  .lists__title {
+    font-size: 1.6em;
+  }
+  .list__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+  }
+  .list__container .list {
+    list-style: none;
+    max-height: 20em;
+    width: fit-content;
+    overflow-y: scroll;
+    padding: 1% 2%;
+    border-radius: 0.2em;
+    scrollbar-width: none;
+  }
+  .list__container .list::-webkit-scrollbar {
+    display: none;
+  }
+  .list__container .list::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  .list__container .list__item {
+    width: 18em;
+    font-size: 1em;
+    margin-top: 3.5%;
+  }
+  .list__container .list__link {
+    font-size: 1em;
+  }
+  .list__container .list__link:hover {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    height: 10em;
+  }
+  .main__title {
+    font-size: 1.5em;
+    top: 3.3%;
+  }
+  .form {
+    margin-top: -10%;
+  }
+  .form__input {
+    font-size: 0.9em;
+  }
+  .form__input::placeholder {
+    color: #8e3d8e;
+  }
+  .form__button {
+    font-size: 0.9em;
+  }
+  .lists__title {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    font-size: 12px;
+  }
+}
 .navigation .container {
   padding: 1% 10%;
   display: flex;
@@ -178,7 +297,7 @@ body {
   padding: 1% 10%;
 }
 .container .list__title {
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
   font-size: _;
   text-transform: uppercase;
@@ -240,7 +359,7 @@ body {
 .container .list__button {
   background: transparent;
   border: 1px solid #ffffff;
-  border-radius: 50%;
+  border-radius: 0.2em;
   color: #ffffff;
   font-size: 1.1em;
   padding: 1% 1.2%;
@@ -324,6 +443,31 @@ body {
   display: none;
 }
 
+@media (max-width: 1050px) {
+  body {
+    font-size: 15px;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 750px) {
+  body {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 11px;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    font-size: 10px;
+  }
+}
 *,
 *::after,
 *::before {
