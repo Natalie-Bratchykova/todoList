@@ -334,6 +334,9 @@ body {
   .form__input::placeholder {
     text-align: center;
   }
+  .form__button {
+    width: 100%;
+  }
   .lists__title {
     font-size: 2.4em;
   }

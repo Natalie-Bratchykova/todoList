@@ -317,6 +317,9 @@ body {
     &__input::placeholder {
       text-align: center;
     }
+    &__button {
+      width: 100%;
+    }
   }
   .lists__title {
     font-size: 2.4em;
